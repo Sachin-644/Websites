@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin's fitness</title>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+    /* css Reset */
+    body {
+        font-family: 'Signika', sans-serif;
+        color: white;
+        margin: auto;
+        padding: 0px;
+        background: url('img/man.png');
+        width: 100vw;
+        height: 100vw;
+        background-size: 120%;
+        transform:none;
+        animation: bg 5s infinite linear;
+    }
+
+    .left {
+        display: inline-block;
+        /* border: 2px solid red; */
+        position: absolute;
+        left: 60px;
+        top: 20px;
+        /* padding: 0%; */
+        /* width: 0px; */
+    }
+
+    .left img {
+        width: 63px;
+        filter: invert(100%);
+    }
+
+    .left div {
+        line-height: 19px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .mid {
+        display: block;
+        width: 35%;
+        margin: 20px auto;
+        /* border: 2px solid rgb(153, 197, 232); */
+    }
+
+    .right {
+        position: absolute;
+        right: 34px;
+        top: 34px;
+        display: inline-block;
+        /* border: 2px solid rgb(108, 204, 167); */
+    }
+
+    .navbar {
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 22px;
+        /* transition: background-position-x 0.9s linear; */
+    }
+
+    .navbar li a {
+        color: white;
+        text-decoration: none;
+        padding: 34px 22px;
+        transition: color 0.3s ease;
+    }
+
+    .navbar li a:hover,
+    .navbar li a:active {
+        text-decoration: underline;
+        color: gray;
+        /* background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg=="); */
+        /* animation: line 1s; */
+    }
+    /* .menu li:hover a{
+        color: #d94f5c;
+    }
+    .menu li:not(:last-child) {
+        margin-right: 30px;
+    } */
+    /* @keyframes line {
+  0% {
+    background-position-x: 390px;
+  }
+} */
+
+    .btn {
+        font-family: 'Signika', sans-serif;
+        margin: 0px 5px;
+        background-color: rgb(13, 8, 8);
+        color: white;
+        padding: 4px 14px;
+        border: 2px solid gray;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: transparent;
+    }
+
+    .container {
+        border: 2px solid white;
+        margin: 106px 80px;
+        padding: 65px;
+        width: 33%;
+        border-radius: 28px;
+
+        opacity: 0; /* Initially, set the opacity to 0 to hide the element */
+        animation: slide-in 1s ease forwards; /* Apply the slide-in animation */
+    }
+    @keyframes slide-in {
+        from {
+            transform: translateX(-100%); /* Slide in from the left */
+            opacity: 0; /* Start with 0 opacity */
+        }
+        to {
+            transform: translateX(0); /* End at the normal position */
+            opacity: 1; /* Fade in to full opacity */
+        }
+    }
+
+
+    .form-group input {
+        font-family: 'Signika', sans-serif;
+        text-align: center;
+        display: block;
+        width: 50px;
+        padding: 4px;
+        border: 2px solid black;
+        margin: 14px auto;
+        font-size: 14px;
+        border-radius: 8px;
+        background-color: transparent;
+        color: white;
+    }
+
+    .container h1 {
+        text-align: center;
+    }
+
+    .container button {
+        display: block;
+        width: 23%;
+        margin: auto;
+
+    }
+</style>
+
+<body>
+    <header class="header">
+        <!-- left box for navbar -->
+        <div class="left">
+            <img src="img/dumbell.png" alt="">
+            <div>Sachin Fitness</div>
+        </div>
+
+        <!-- Mid box for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Fitness Calculator</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Right box for buttons -->
+        <div class="right">
+            <button class="btn">Call us now</button>
+            <button class="btn">Email Us</button>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Join the best gym of Kerala now</h1>
+        <form action="noaction.php">
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Name">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Age">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Gender">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Locality">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Email id">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Phone no.">
+            </div>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
